@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Raksha Bandhan Kartik Bhaiya ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #fff1f2, #ffe4e6, #fff7ed);
+    color: #5b1a1a;
+    overflow-x: hidden;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 24px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.rakhi {
+    font-size: 80px;
+    animation: rakhiPulse 2s infinite;
+}
+
+@keyframes rakhiPulse {
+    50% {
+        transform: scale(1.15) rotate(5deg);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(40px, 8vw, 78px);
+    color: #be123c;
+    margin: 20px 0;
+}
+
+.hero p {
+    font-size: 22px;
+    line-height: 1.7;
+}
+
+.names {
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #9f1239;
+}
+
+.year {
+    margin-top: 15px;
+    font-size: 19px;
+}
+
+/* Buttons */
+.start-btn {
+    margin-top: 35px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background: #be123c;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(190,18,60,0.3);
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.08);
+}
+
+/* MESSAGE */
+.message {
+    padding: 70px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.message-box {
+    max-width: 850px;
+    margin: auto;
+    background: rgba(255,255,255,0.9);
+    padding: 45px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(120,20,20,0.15);
+    text-align: center;
+}
+
+.message-box h2 {
+    color: #be123c;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.message-box p {
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.signature {
+    margin-top: 25px;
+    font-size: 21px !important;
+    font-weight: bold;
+}
+
+/* MISSING YOU */
+.missing {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#fff7ed,#ffe4e6);
+}
+
+.missing h2 {
+    color: #be123c;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.missing p {
+    font-size: 19px;
+}
+
+/* PHOTO SECTION */
+.photos {
+    padding: 70px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.photos > h2 {
+    font-size: 40px;
+    color: #9f1239;
+    margin-bottom: 40px;
+}
+
+.photo-buttons {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+}
+
+.photo-card {
+    padding: 35px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.9);
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.photo-card .emoji {
+    font-size: 65px;
+}
+
+.photo-card h3 {
+    font-size: 29px;
+    color: #be123c;
+    margin: 15px 0;
+}
+
+.photo-card p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.old-card {
+    border: 3px solid #f59e0b;
+}
+
+.new-card {
+    border: 3px solid #e11d48;
+}
+
+/* GALLERY */
+.gallery {
+    display: none;
+    max-width: 1000px;
+    margin: 40px auto;
+    gap: 20px;
+}
+
+.gallery.show {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    animation: galleryAppear 0.6s ease;
+}
+
+@keyframes galleryAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.04);
+}
+
+/* GIFT */
+.gift {
+    padding: 70px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.gift-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 45px 30px;
+    text-align: center;
+    background: linear-gradient(135deg,#fff7ed,#ffe4e6);
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.gift-box .gift-icon {
+    font-size: 75px;
+}
+
+.gift-box h2 {
+    color: #be123c;
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.gift-box p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.gift-list {
+    margin: 25px 0;
+    font-size: 21px;
+    line-height: 2;
+}
+
+.gift-question {
+    font-size: 25px !important;
+    font-weight: bold;
+    color: #9f1239;
+}
+
+/* FINAL */
+.final {
+    padding: 90px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.final h2 {
+    color: #be123c;
+    font-size: clamp(35px,7vw,60px);
+}
+
+.final p {
+    margin-top: 20px;
+    font-size: 21px;
+    line-height: 1.7;
+}
+
+/* FOOTER */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #881337;
+    color: white;
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90%;
+    border-radius: 15px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width:700px) {
+
+    .photo-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery.show {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery img {
+        height: 220px;
+    }
+
+    .message-box {
+        padding: 28px 20px;
+    }
+}
+
+@media(max-width:450px) {
+
+    .gallery.show {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: 300px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .names {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLOATING DECORATIONS -->
+
+<div class="heart" style="left:5%;animation-delay:1s;">❤️</div>
+<div class="heart" style="left:20%;animation-delay:4s;">🌸</div>
+<div class="heart" style="left:40%;animation-delay:2s;">✨</div>
+<div class="heart" style="left:60%;animation-delay:5s;">❤️</div>
+<div class="heart" style="left:80%;animation-delay:3s;">🌸</div>
+<div class="heart" style="left:95%;animation-delay:6s;">✨</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="rakhi">🪢</div>
+
+<h1>Happy Raksha Bandhan ❤️</h1>
+
+<p>
+A special Raksha Bandhan surprise from a sister
+to her very special brother.
+</p>
+
+<div class="names">
+Nitya Goyal ❤️ Kartik Bhaiya
+</div>
+
+<div class="year">
+✨ Our first Raksha Bandhan was in <b>2008</b> ✨
+</div>
+
+<button class="start-btn"
+onclick="document.getElementById('message').scrollIntoView({behavior:'smooth'})">
+Open My Message ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section class="message" id="message">
+
+<div class="message-box">
+
+<h2>Dear Kartik Bhaiya ❤️</h2>
+
+<p>
+From our very first Raksha Bandhan in
+<b>2008</b>, our beautiful journey as brother
+and sister began. 🪢❤️
+</p>
+
+<br>
+
+<p>
+You are not just my brother, you are one of the
+most special people in my life.
+</p>
+
+<br>
+
+<p>
+Through every childhood memory, every little fight,
+every laugh and every beautiful moment,
+you have always been a part of my story.
+</p>
+
+<br>
+
+<p>
+On this Raksha Bandhan, I just want to say that
+no matter how much we grow up, you will always
+be my <b>Kartik Bhaiya</b> and I will always
+be your little sister. ❤️
+</p>
+
+<br>
+
+<p>
+May you always be happy, successful and blessed.
+May our bond remain this beautiful forever.
+</p>
+
+<div class="missing">
+
+<h2>🥺 Missing You, Bhaiya ❤️</h2>
+
+<p>
+This Raksha Bandhan feels a little incomplete
+without you.
+</p>
+
+<br>
+
+<p>
+I miss you so much, Bhaiya. Even if we are not
+together today, all our memories will always
+stay close to my heart.
+</p>
+
+<br>
+
+<p>
+No matter how far we are,
+you will always have a special place in my heart. ❤️
+</p>
+
+</div>
+
+<p class="signature">
+With lots and lots of love,<br>
+🌸 Nitya Goyal 🌸
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PHOTOS -->
+
+<section class="photos">
+
+<h2>📸 Our Beautiful Memories 📸</h2>
+
+<div class="photo-buttons">
+
+<!-- OLD -->
+
+<div class="photo-card old-card"
+onclick="toggleGallery('oldGallery')">
+
+<div class="emoji">👶📸</div>
+
+<h3>Old Memories</h3>
+
+<p>
+Our childhood memories and beautiful old moments
+from the early days.
+</p>
+
+<br>
+
+<b>✨ Click to See Old Photos ✨</b>
+
+</div>
+
+
+<!-- NEW -->
+
+<div class="photo-card new-card"
+onclick="toggleGallery('newGallery')">
+
+<div class="emoji">❤️📸</div>
+
+<h3>New Memories</h3>
+
+<p>
+Our latest memories and beautiful moments together.
+</p>
+
+<br>
+
+<b>✨ Click to See New Photos ✨</b>
+
+</div>
+
+</div>
+
+
+<!-- OLD PHOTOS -->
+
+<div id="oldGallery" class="gallery">
+
+<img
+src="IMG-20260817-WA0009.jpg"
+alt="Old Memory 1"
+onclick="openImage(this.src)"
+>
+
+<img
+src="IMG_20260817_184031.jpg"
+alt="Old Memory 2"
+onclick="openImage(this.src)"
+>
+
+</div>
+
+
+<!-- NEW PHOTOS -->
+
+<div id="newGallery" class="gallery">
+
+<img
+src="IMG-20260817-WA0012.jpg"
+alt="New Memory 1"
+onclick="openImage(this.src)"
+>
+
+<img
+src="IMG-20260817-WA0010.jpg"
+alt="New Memory 2"
+onclick="openImage(this.src)"
+>
+
+<img
+src="IMG_20260817_184051.jpg"
+alt="New Memory 3"
+onclick="openImage(this.src)"
+>
+
+</div>
+
+</section>
+
+
+<!-- FUNNY GIFT -->
+
+<section class="gift">
+
+<div class="gift-box">
+
+<div class="gift-icon">🎁😂</div>
+
+<h2>One More Important Thing, Kartik Bhaiya 😂</h2>
+
+<p>
+Okay Bhaiya... emotional message is over. 🥺❤️
+</p>
+
+<br>
+
+<p>
+Now let's talk about the
+<b>REAL reason for Raksha Bandhan!</b> 😌😂
+</p>
+
+<br>
+
+<p>
+I wished you, missed you, remembered our memories
+and even wrote such a beautiful message...
+</p>
+
+<br>
+
+<p>
+So obviously...
+<b>MY RAKHI DESERVES A GIFT! 🎁😎</b>
+</p>
+
+<div class="gift-list">
+
+💸 UPI <br>
+🍫 Chocolate <br>
+🛍️ Shopping <br>
+🎁 Surprise Gift <br>
+
+</div>
+
+<p>
+Anything will work! 😂
+</p>
+
+<br>
+
+<p class="gift-question">
+🎁 No Gift = No Forgiveness 😂<br>
+💰 Bigger Gift = Bigger Sister's Love ❤️😂
+</p>
+
+<br>
+
+<p>
+So Kartik Bhaiya...
+</p>
+
+<h2>
+Where is my Rakhi Gift? 👀🎁😂
+</h2>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+<h2>
+Happy Raksha Bandhan<br>
+Kartik Bhaiya! 🪢❤️
+</h2>
+
+<p>
+Once a brother, always my protector. ❤️
+</p>
+
+<p>
+No matter how old we become,
+our Rakhi bond will always remain special.
+</p>
+
+<br>
+
+<p>
+<b>
+Love you always, Bhaiya! ❤️
+</b>
+</p>
+
+</section>
+
+
+<footer>
+
+Made with ❤️ by Nitya for Kartik Bhaiya
+
+</footer>
+
+
+<!-- IMAGE LIGHTBOX -->
+
+<div
+id="lightbox"
+class="lightbox"
+onclick="closeImage()"
+>
+
+<span class="close">&times;</span>
+
+<img
+id="largeImage"
+src=""
+alt="Full Photo"
+onclick="event.stopPropagation()"
+>
+
+</div>
+
+
+<script>
+
+/* Gallery */
+
+function toggleGallery(id) {
+
+    const gallery = document.getElementById(id);
+
+    gallery.classList.toggle("show");
+
+    if (gallery.classList.contains("show")) {
+
+        setTimeout(() => {
+            gallery.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        }, 100);
+
+    }
+}
+
+
+/* Fullscreen Photo */
+
+function openImage(src) {
+
+    document.getElementById("largeImage").src = src;
+
+    document
+    .getElementById("lightbox")
+    .classList.add("show");
+}
+
+
+/* Close Photo */
+
+function closeImage() {
+
+    document
+    .getElementById("lightbox")
+    .classList.remove("show");
+}
+
+
+/* Escape key closes photo */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeImage();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
